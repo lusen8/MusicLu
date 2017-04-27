@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
         if (id == R.id.search_bar) {
             Intent intent = new Intent(MainActivity.this,SearchActivity.class);
             startActivity(intent);
