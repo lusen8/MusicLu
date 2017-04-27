@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_me"
+        android:title="我的"
+        android:icon="@drawable/ic_person"/>
+    <item
+        android:id="@+id/menu_music"
+        android:title="音乐"
+        android:icon="@drawable/ic_music_note"/>
+    <item
+        android:id="@+id/menu_chose"
+        android:title="精选"
+        android:icon="@drawable/ic_star_border"/>
+</menu>
