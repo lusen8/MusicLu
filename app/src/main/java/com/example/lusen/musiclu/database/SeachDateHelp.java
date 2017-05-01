@@ -1,4 +1,4 @@
-package com.example.lusen.musiclu.help;
+package com.example.lusen.musiclu.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
