@@ -14,13 +14,21 @@ public class SearchActivity extends AppCompatActivity {
     ImageView backSeach;
     SeachView seachView;
     ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         init();
         click();
+    }
 
+    private void init(){
+        actionBar = getSupportActionBar();
+        actionBar.hide();
+        //SeachView.inflate(this,R.layout.search_layout,null);     //
+        backSeach = (ImageView) findViewById(R.id.back_search);
+        seachView = (SeachView) findViewById(R.id.searchView);
     }
 
     private void click(){
@@ -31,10 +39,5 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
     }
-    private void init(){
-        actionBar = getSupportActionBar();
-        actionBar.hide();
-        SeachView.inflate(this,R.layout.search_layout,null);
-        backSeach = (ImageView) findViewById(R.id.back_search);
-    }
+
 }

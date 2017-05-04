@@ -13,12 +13,12 @@
         android:paddingRight="16dp">
 
         <ImageView
+            android:id="@+id/back_search"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
-            android:src="@drawable/ic_arrow_back"
-            android:id="@+id/back_search"/>
+            android:src="@drawable/ic_arrow_back" />
 
         <EditText
             android:id="@+id/et_search"

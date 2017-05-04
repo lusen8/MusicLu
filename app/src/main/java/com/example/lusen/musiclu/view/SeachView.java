@@ -1,9 +1,11 @@
 package com.example.lusen.musiclu.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
@@ -20,7 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lusen.musiclu.R;
-import com.example.lusen.musiclu.help.SeachDateHelp;
+import com.example.lusen.musiclu.activity.SongListActivity;
+import com.example.lusen.musiclu.database.SeachDateHelp;
 
 /**
  * Created by lusen on 2017/4/24.
@@ -173,15 +176,28 @@ public class SeachView extends LinearLayout {
         iv_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // TODO: 17-4-29 实现搜索功能
+                String songName = et_search.getText().toString();
+                if (TextUtils.isEmpty(songName)) {   //判断消息输入是否为空
+                    Toast.makeText(context, getResources().getString(R.string.blankTips), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //根据输入的内容模糊查询商品，并跳转到另一个界面，这个根据需求实现
+                //Toast.makeText(context, "clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, SongListActivity.class);
+                intent.putExtra("name", songName);
+                context.startActivity(intent);
+
                 boolean hasData = hasData(et_search.getText().toString().trim());
                 if (!hasData) {
                     insertData(et_search.getText().toString().trim());
 
                     //搜索后显示数据库里所有搜索历史是为了测试
-                    queryData("");
+                    //queryData("");
                 }
-                //根据输入的内容模糊查询商品，并跳转到另一个界面，这个根据需求实现
-                Toast.makeText(context, "clicked!", Toast.LENGTH_SHORT).show();
+
+                et_search.setText("");
             }
         });
 

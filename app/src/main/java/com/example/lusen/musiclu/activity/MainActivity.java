@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
     MusicFragment musicFragment = new MusicFragment();
     ChosenFragment chosenFragment = new ChosenFragment();
     ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         actionBar = getSupportActionBar();
+        startFragment(meFragment);
         menuClick();
     }
 
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id == R.id.search_bar) {
-            Intent intent = new Intent(MainActivity.this,SearchActivity.class);
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
             startActivity(intent);
 
             return true;
